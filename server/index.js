@@ -4,10 +4,21 @@ const cors = require("cors");
 const EmployeeModel = require("./models/employee");
 
 const app = express();
+app.use(
+  cors({
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cors());
 
 mongoose.connect("mongodb://127.0.0.1:27017/employee");
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
