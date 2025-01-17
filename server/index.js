@@ -6,7 +6,7 @@ const EmployeeModel = require("./models/employee");
 const app = express();
 app.use(
   cors({
-    origin: [],
+    origin: [""],
     methods: ["POST", "GET"],
     credentials: true,
   })
