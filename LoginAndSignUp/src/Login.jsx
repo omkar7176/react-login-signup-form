@@ -32,7 +32,7 @@ function Login() {
         if (result.data === "Success") {
           navigate("/home");
         } else {
-          setErrorMessage("Invalid credentials");
+          setErrorMessage("Incorrect Password, Please try again.");
         }
       })
       .catch((err) => {

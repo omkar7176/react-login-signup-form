@@ -10,11 +10,10 @@ function Signup() {
   const [address, setAddress] = useState();
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://react-login-signup-form-chi.vercel.app/register", {
+      .post("http://localhost:3301/register", {
         name,
         email,
         password,
