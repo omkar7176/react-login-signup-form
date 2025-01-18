@@ -10,10 +10,11 @@ function Signup() {
   const [address, setAddress] = useState();
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3301/register", {
+      .post("https://deploy-mern-api-ten-kohl.vercel.app/register", {
         name,
         email,
         password,
